@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Welcome to our premium breakfast restaurant. Enjoy fresh, delicious food crafted with love. Reserve your table today." />
+  <meta name="keywords" content="restaurant, breakfast, food, menu, reservation, dining" />
+  <meta name="author" content="Restaurant Website" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Golden Fork — Premium Breakfast Restaurant" />
+  <meta property="og:description" content="Experience the finest breakfast in town. Fresh ingredients, warm atmosphere." />
+  <meta property="og:type" content="website" />
+
+  <title>Golden Fork — Premium Breakfast Restaurant</title>
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== TOAST NOTIFICATION ========== -->
+  <div class="toast-notification" id="toast-notification" role="alert" aria-live="polite">
+    <div class="toast-icon"><i class="fas fa-check-circle"></i></div>
+    <div class="toast-body">
+      <strong class="toast-title">Reservation Confirmed!</strong>
+      <p class="toast-message">We'll send the details to your email shortly.</p>
+    </div>
+    <button class="toast-close" id="toast-close" aria-label="Close notification">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="toast-progress"></div>
+  </div>
+
+  <!-- ========== BACK TO TOP BUTTON ========== -->
+  <button id="back-to-top" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="logo">
+      <img src="./images/logo.png" alt="Golden Fork Restaurant Logo" width="60" height="60" />
+      <span class="logo-text">Golden Fork</span>
+    </div>
+
+    <nav class="navbar" id="navbar" aria-label="Main navigation">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#menu" class="nav-link">Our Menu</a>
+      <a href="#breakfast" class="nav-link">Breakfast</a>
+      <a href="#client" class="nav-link">Clients</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="#reservation" class="btn-reserve">
+        <i class="fas fa-calendar-check"></i> Reserve Table
+      </a>
+      <button id="menu-bar" class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="home" id="home">
+      <div class="home-overlay"></div>
+      <div class="main-home">
+        <div class="home-text-content">
+          <p class="home-tagline">
+            <i class="fas fa-star"></i> Premium Breakfast Experience
+          </p>
+          <h1>Taste the <span class="highlight">Difference</span> of Real Food</h1>
+          <p class="home-desc">
+            Crafted with love, served with passion. Every dish tells a story of
+            fresh ingredients and culinary excellence. Come taste the difference.
+          </p>
+          <div class="home-cta">
+            <a href="#menu" class="btn-primary">
+              <i class="fas fa-utensils"></i> Explore Menu
+            </a>
+            <a href="#reservation" class="btn-outline">
+              <i class="fas fa-calendar-alt"></i> Book a Table
+            </a>
+          </div>
+        </div>
+
+        <div class="home-image">
+          <div class="hero-img-wrapper">
+            <img src="./images/background content.png" alt="Delicious breakfast food on a plate" loading="eager" />
+            <div class="hero-badge">
+              <i class="fas fa-award"></i>
+              <span>Award<br>Winning</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator">
+        <div class="scroll-dot"></div>
+      </div>
+    </section>
+
+    <!-- ========== STATS SECTION ========== -->
+    <section class="stats-section">
+      <div class="stats-container">
+        <div class="stat-card" data-target="500">
+          <i class="fas fa-utensils stat-icon"></i>
+          <div class="stat-number"><span class="counter">0</span>+</div>
+          <div class="stat-label">Unique Dishes</div>
+        </div>
+        <div class="stat-card" data-target="12">
+          <i class="fas fa-medal stat-icon"></i>
+          <div class="stat-number"><span class="counter">0</span>+</div>
+          <div class="stat-label">Years of Excellence</div>
+        </div>
+        <div class="stat-card" data-target="10000">
+          <i class="fas fa-users stat-icon"></i>
+          <div class="stat-number"><span class="counter">0</span>+</div>
+          <div class="stat-label">Happy Customers</div>
+        </div>
+        <div class="stat-card" data-target="15">
+          <i class="fas fa-trophy stat-icon"></i>
+          <div class="stat-number"><span class="counter">0</span>+</div>
+          <div class="stat-label">Awards Won</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT SECTION ========== -->
+    <section id="about" class="about">
+      <div class="main-about">
+        <div class="about-image">
+          <img src="./images/About us.png" alt="Our warm and welcoming restaurant interior" loading="lazy" />
+          <div class="about-experience-badge">
+            <span class="badge-number">12</span>
+            <span class="badge-text">Years of<br>Excellence</span>
+          </div>
+        </div>
+
+        <div class="about-text-content">
+          <p class="section-tagline"><i class="fas fa-leaf"></i> Our Story</p>
+          <h2>About <span class="highlight">Us</span></h2>
+          <p>
+            We believe that great food starts with great ingredients. Since 2012,
+            our chefs have been sourcing the finest local produce to craft breakfast
+            experiences that go beyond ordinary dining.
+          </p>
+          <p>
+            Every morning is a new opportunity to delight our guests — from classic
+            eggs benedict to innovative seasonal specials crafted fresh daily.
+          </p>
+          <div class="about-features">
+            <div class="feature-item">
+              <i class="fas fa-check-circle"></i>
+              <span>100% Fresh Ingredients</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Locally Sourced Produce</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Expert Culinary Team</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Warm, Cozy Atmosphere</span>
+            </div>
+          </div>
+          <a href="#menu" class="btn-primary">Discover Our Menu</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOOD QUALITY SECTION ========== -->
+    <section class="quality">
+      <div class="main-quality">
+        <div class="quality-text-wrapper">
+          <div class="quality-content">
+            <p class="section-tagline"><i class="fas fa-star"></i> Why Choose Us</p>
+            <h2>Our Food <span class="highlight">Quality</span></h2>
+            <p>
+              We take immense pride in the quality of every dish we serve. Our
+              kitchen follows strict freshness standards — no frozen shortcuts, no
+              compromises. Just pure, honest cooking.
+            </p>
+            <ul class="quality-list">
+              <li><i class="fas fa-seedling"></i> Farm-to-table ingredients</li>
+              <li><i class="fas fa-fire"></i> Cooked to order, always fresh</li>
+              <li><i class="fas fa-heart"></i> Crafted with passion daily</li>
+            </ul>
+            <a href="#reservation" class="btn-primary">Reserve Your Spot</a>
+          </div>
+        </div>
+
+        <div class="quality-image-wrapper">
+          <div class="quality-image">
+            <img src="./images/egg.png" alt="Freshly prepared egg breakfast dish" loading="lazy" />
+            <div class="quality-floating-card">
+              <i class="fas fa-certificate"></i>
+              <span>Quality<br>Certified</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== GALLERY SECTION ========== -->
+    <section class="gallery">
+      <div class="section-header">
+        <p class="section-tagline"><i class="fas fa-camera"></i> Our Gallery</p>
+        <h2>A Feast for <span class="highlight">Your Eyes</span></h2>
+      </div>
+      <div class="main-gallery">
+        <div class="gallery-item">
+          <img src="./images/gallery1.png" alt="Beautiful food presentation - gallery item 1" loading="lazy" />
+          <div class="gallery-overlay">
+            <i class="fas fa-expand-alt"></i>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="./images/gallery2.png" alt="Delicious breakfast spread - gallery item 2" loading="lazy" />
+          <div class="gallery-overlay">
+            <i class="fas fa-expand-alt"></i>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="./images/gallery3.png" alt="Freshly brewed coffee and pastries - gallery item 3" loading="lazy" />
+          <div class="gallery-overlay">
+            <i class="fas fa-expand-alt"></i>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="./images/gallery4.png" alt="Seasonal fruit platter - gallery item 4" loading="lazy" />
+          <div class="gallery-overlay">
+            <i class="fas fa-expand-alt"></i>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="./images/gallery5.png" alt="Chef's special dish - gallery item 5" loading="lazy" />
+          <div class="gallery-overlay">
+            <i class="fas fa-expand-alt"></i>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="./images/gallery6.png" alt="Restaurant ambiance - gallery item 6" loading="lazy" />
+          <div class="gallery-overlay">
+            <i class="fas fa-expand-alt"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ENJOY OUR FOOD SECTION ========== -->
+    <section class="enjoy-our-food">
+      <div class="food-main-content">
+        <p class="section-tagline light"><i class="fas fa-fire"></i> Daily Specials</p>
+        <h2>Enjoy Our <span class="highlight-light">Food</span></h2>
+        <p>
+          Every meal is a celebration of flavor. Our chefs create daily specials
+          using seasonal ingredients — each plate a masterpiece of taste and
+          presentation you won't forget.
+        </p>
+        <a href="#menu" class="btn-primary">View Full Menu</a>
+      </div>
+    </section>
+
+    <!-- ========== MENU SECTION ========== -->
+    <section class="our-menu-food" id="menu">
+      <div class="section-header">
+        <p class="section-tagline"><i class="fas fa-book-open"></i> Our Offerings</p>
+        <h2>Our <span class="highlight">Menu</span></h2>
+      </div>
+      <div class="main-menu-food">
+
+        <article class="menu-card">
+          <div class="menu-card-img">
+            <img src="./images/menu2.png" alt="Italian Sauce Mushrooms dish" loading="lazy" />
+            <div class="menu-badge">Chef's Pick</div>
+          </div>
+          <div class="menu-food-text">
+            <h3>Italian Sauce Mushrooms</h3>
+            <p>
+              A rich Italian mushroom medley sautéed in fresh tomato sauce,
+              seasoned with aromatic herbs and served on toasted sourdough.
+            </p>
+            <div class="menu-footer">
+              <span class="menu-price">$12.50</span>
+              <button class="btn-order" aria-label="Order Italian Sauce Mushrooms">
+                <i class="fas fa-shopping-cart"></i> Order Now
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <div class="menu-card-img">
+            <img src="./images/menu1.png" alt="Classic Eggs Benedict dish" loading="lazy" />
+            <div class="menu-badge popular">Popular</div>
+          </div>
+          <div class="menu-food-text">
+            <h3>Classic Eggs Benedict</h3>
+            <p>
+              Perfectly poached eggs on toasted English muffin, topped with
+              velvety hollandaise sauce and crispy Canadian bacon.
+            </p>
+            <div class="menu-footer">
+              <span class="menu-price">$9.80</span>
+              <button class="btn-order" aria-label="Order Classic Eggs Benedict">
+                <i class="fas fa-shopping-cart"></i> Order Now
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <div class="menu-card-img">
+            <img src="./images/menu3.png" alt="Tropical Fruit Bowl dish" loading="lazy" />
+            <div class="menu-badge new">New</div>
+          </div>
+          <div class="menu-food-text">
+            <h3>Tropical Fruit Bowl</h3>
+            <p>
+              Seasonal tropical fruits, Greek yogurt, honey drizzle, and a
+              sprinkle of granola — light, refreshing, and guilt-free.
+            </p>
+            <div class="menu-footer">
+              <span class="menu-price">$7.20</span>
+              <button class="btn-order" aria-label="Order Tropical Fruit Bowl">
+                <i class="fas fa-shopping-cart"></i> Order Now
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ========== BREAKFAST SPECIALS SECTION ========== -->
+    <section class="breakfast-section" id="breakfast">
+      <div class="section-header light">
+        <p class="section-tagline light"><i class="fas fa-sun"></i> Morning Favorites</p>
+        <h2>Breakfast <span class="highlight-light">Specials</span></h2>
+      </div>
+      <div class="breakfast-grid">
+
+        <article class="breakfast-card">
+          <div class="breakfast-icon">
+            <i class="fas fa-egg"></i>
+          </div>
+          <img src="./images/egg.png" alt="Farm Fresh Eggs breakfast special" loading="lazy" />
+          <div class="breakfast-info">
+            <h3>Farm Fresh Eggs</h3>
+            <p>Free-range eggs, cooked your way — scrambled, poached, or fried to perfection.</p>
+            <span class="breakfast-price">$6.50</span>
+          </div>
+        </article>
+
+        <article class="breakfast-card">
+          <div class="breakfast-icon">
+            <i class="fas fa-apple-alt"></i>
+          </div>
+          <img src="./images/fruit.png" alt="Seasonal Fruit Platter breakfast special" loading="lazy" />
+          <div class="breakfast-info">
+            <h3>Seasonal Fruit Platter</h3>
+            <p>A vibrant rainbow of the season's freshest fruits, served with honey yogurt dip.</p>
+            <span class="breakfast-price">$8.00</span>
+          </div>
+        </article>
+
+        <article class="breakfast-card">
+          <div class="breakfast-icon">
+            <i class="fas fa-bread-slice"></i>
+          </div>
+          <img src="./images/menu1.png" alt="Sourdough Toast Stack breakfast special" loading="lazy" />
+          <div class="breakfast-info">
+            <h3>Sourdough Toast Stack</h3>
+            <p>House-baked sourdough layered with avocado, microgreens, and poached eggs.</p>
+            <span class="breakfast-price">$10.50</span>
+          </div>
+        </article>
+
+        <article class="breakfast-card">
+          <div class="breakfast-icon">
+            <i class="fas fa-coffee"></i>
+          </div>
+          <img src="./images/menu2.png" alt="Breakfast Combo with Coffee" loading="lazy" />
+          <div class="breakfast-info">
+            <h3>Full Breakfast Combo</h3>
+            <p>Eggs, toast, grilled tomatoes, mushrooms, and a freshly brewed coffee. The works!</p>
+            <span class="breakfast-price">$14.90</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS SECTION ========== -->
+    <section class="testimonials" id="client">
+      <div class="section-header">
+        <p class="section-tagline"><i class="fas fa-quote-left"></i> Customer Reviews</p>
+        <h2>What Our <span class="highlight">Clients Say</span></h2>
+      </div>
+      <div class="testimonials-grid">
+
+        <article class="testimonial-card">
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">
+            "The best breakfast I've ever had! The eggs benedict were absolutely divine,
+            and the atmosphere was so warm and welcoming. Will definitely be back!"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar"><i class="fas fa-user"></i></div>
+            <div class="author-info">
+              <strong>Sarah Johnson</strong>
+              <span>Food Blogger</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial-card featured">
+          <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">
+            "Golden Fork is our family's weekend tradition. The freshness of every ingredient
+            is unmatched. The fruit platter and sourdough toast are a must-try. Highly recommended!"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar"><i class="fas fa-user"></i></div>
+            <div class="author-info">
+              <strong>Michael Torres</strong>
+              <span>Regular Customer</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+          </div>
+          <p class="testimonial-text">
+            "Exceptional quality and service. The staff are incredibly friendly and the
+            ambiance is perfect for a relaxed morning. The full breakfast combo is worth every penny!"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar"><i class="fas fa-user"></i></div>
+            <div class="author-info">
+              <strong>Aisha Patel</strong>
+              <span>Lifestyle Influencer</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ========== RESERVATION SECTION ========== -->
+    <section class="reservation-section" id="reservation">
+      <div class="reservation-wrapper">
+        <div class="reservation-info">
+          <p class="section-tagline light"><i class="fas fa-calendar-check"></i> Book Ahead</p>
+          <h2>Reserve Your <span class="highlight-light">Table</span></h2>
+          <p>Secure your perfect morning experience. We recommend booking at least a day in advance for weekend visits.</p>
+          <div class="reservation-details">
+            <div class="res-detail-item">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Opening Hours</strong>
+                <span>Mon–Fri: 7:00 AM – 3:00 PM</span>
+                <span>Sat–Sun: 8:00 AM – 4:00 PM</span>
+              </div>
+            </div>
+            <div class="res-detail-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <strong>Phone</strong>
+                <span>+1 (555) 123-4567</span>
+              </div>
+            </div>
+            <div class="res-detail-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <strong>Location</strong>
+                <span>123 Breakfast Lane, Food City</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="reservation-form" id="reservation-form" novalidate>
+          <div class="form-group">
+            <label for="res-name"><i class="fas fa-user"></i> Full Name</label>
+            <input type="text" id="res-name" name="name" placeholder="Your full name" required />
+            <span class="field-error" id="res-name-error"></span>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="res-date"><i class="fas fa-calendar"></i> Date</label>
+              <input type="date" id="res-date" name="date" required />
+              <span class="field-error" id="res-date-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="res-time"><i class="fas fa-clock"></i> Time</label>
+              <input type="time" id="res-time" name="time" required />
+              <span class="field-error" id="res-time-error"></span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="res-guests"><i class="fas fa-users"></i> Guests</label>
+              <select id="res-guests" name="guests" required>
+                <option value="">Select guests</option>
+                <option value="1">1 Guest</option>
+                <option value="2">2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="5">5+ Guests</option>
+              </select>
+              <span class="field-error" id="res-guests-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="res-email"><i class="fas fa-envelope"></i> Email</label>
+              <input type="email" id="res-email" name="email" placeholder="your@email.com" required />
+              <span class="field-error" id="res-email-error"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="res-notes"><i class="fas fa-comment-alt"></i> Special Requests</label>
+            <textarea id="res-notes" name="notes" rows="3" placeholder="Dietary restrictions, celebration, seating preference..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit" id="res-submit">
+            <span class="btn-text"><i class="fas fa-check"></i> Confirm Reservation</span>
+            <span class="btn-loader" hidden><i class="fas fa-spinner fa-spin"></i> Processing...</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section class="contact-section" id="contact">
+      <div class="section-header">
+        <p class="section-tagline"><i class="fas fa-envelope"></i> Get In Touch</p>
+        <h2>Contact <span class="highlight">Us</span></h2>
+      </div>
+      <div class="contact-wrapper">
+        <div class="contact-info-cards">
+          <div class="contact-card">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <h3>Find Us</h3>
+            <p>123 Breakfast Lane<br>Food City, FC 45678</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+            <h3>Call Us</h3>
+            <p>+1 (555) 123-4567<br>+1 (555) 765-4321</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon"><i class="fas fa-envelope-open"></i></div>
+            <h3>Email Us</h3>
+            <p>hello@goldenfork.com<br>reservations@goldenfork.com</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+            <h3>Opening Hours</h3>
+            <p>Mon–Fri: 7AM – 3PM<br>Sat–Sun: 8AM – 4PM</p>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="c-name">Your Name</label>
+              <input type="text" id="c-name" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label for="c-email">Your Email</label>
+              <input type="email" id="c-email" placeholder="john@example.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="c-subject">Subject</label>
+            <input type="text" id="c-subject" placeholder="How can we help?" required />
+          </div>
+          <div class="form-group">
+            <label for="c-message">Message</label>
+            <textarea id="c-message" rows="5" placeholder="Tell us more about your enquiry..." required></textarea>
+          </div>
+          <button type="submit" class="btn-submit" id="contact-submit">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ========== BEFORE FOOTER BANNER ========== -->
+    <div class="before-footer">
+      <img src="./images/before footer.png" alt="Golden Fork restaurant interior ambiance" loading="lazy" />
+      <div class="before-footer-overlay">
+        <h2>Start Your Morning Right</h2>
+        <p>Join us for an unforgettable breakfast experience</p>
+        <a href="#reservation" class="btn-primary">Reserve Now</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-col footer-brand">
+        <img src="./images/footerlogo.png" alt="Golden Fork Logo" loading="lazy" />
+        <p>Where every morning is a new culinary adventure. Fresh ingredients, warm hearts, unforgettable flavors.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="TikTok" class="social-link"><i class="fab fa-tiktok"></i></a>
+          <a href="#" aria-label="YouTube" class="social-link"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <nav aria-label="Footer navigation">
+          <a href="#home">Home</a>
+          <a href="#about">About Us</a>
+          <a href="#menu">Our Menu</a>
+          <a href="#breakfast">Breakfast</a>
+          <a href="#client">Testimonials</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer-col">
+        <h4>Opening Hours</h4>
+        <ul class="hours-list">
+          <li><span>Monday – Friday</span><span>7:00 AM – 3:00 PM</span></li>
+          <li><span>Saturday</span><span>8:00 AM – 4:00 PM</span></li>
+          <li><span>Sunday</span><span>8:00 AM – 4:00 PM</span></li>
+          <li class="closed"><span>Public Holidays</span><span>Closed</span></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p>Get exclusive deals and seasonal menus delivered to your inbox.</p>
+        <form class="newsletter-form" id="newsletter-form" novalidate>
+          <div class="newsletter-input-group">
+            <input type="email" id="newsletter-email" placeholder="your@email.com" aria-label="Newsletter email" required />
+            <button type="submit" aria-label="Subscribe to newsletter">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+          <span class="newsletter-msg" id="newsletter-msg"></span>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="copyright-year"></span> Golden Fork Restaurant. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ScrollReveal -->
+  <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+  <!-- Main JS -->
+  <script src="main.js"></script>
+
+</body>
+</html>
